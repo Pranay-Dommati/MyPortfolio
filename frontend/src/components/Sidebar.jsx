@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { FaFacebook, FaInstagram, FaSkype, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaHackerrank } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import { 
   AiOutlineHome, 
   AiOutlineUser, 
@@ -9,31 +10,33 @@ import {
   AiOutlineMail,
   AiOutlineTrophy
 } from "react-icons/ai";
+import profileImage from '../assets/profile.jpg'; // Import the profile image
 
-const Sidebar = ({ onTabClick }) => {
-  const [activeTab, setActiveTab] = useState('Home');
-
-  const handleTabClick = (tabName) => {
-    setActiveTab(tabName);
-    onTabClick(tabName);
-  };
-
+const Sidebar = ({ activeTab, onTabClick }) => {
   return (
     <div className="w-72 bg-gray-900 text-white h-screen p-6 flex flex-col sticky top-0">
       {/* Profile Section */}
       <div className="flex flex-col items-center">
         <img
-          src="https://via.placeholder.com/100"
+          src={profileImage}
           alt="Profile"
-          className="rounded-full w-24 h-24 border-4 border-gray-700 mb-4"
+          className="rounded-full w-24 h-24 border-4 border-gray-700 mb-4 object-cover"
         />
         <h2 className="text-xl font-semibold mb-4">Pranay Dommati</h2>
         {/* Social Icons */}
         <div className="flex space-x-4 mb-16">
-          <FaFacebook className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
-          <FaInstagram className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
-          <FaSkype className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
-          <FaLinkedin className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
+          <a href="https://github.com/Pranay-Dommati" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
+          </a>
+          <a href="https://www.linkedin.com/in/pranaydommati/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
+          </a>
+          <a href="https://leetcode.com/u/Pranay_Dommati/" target="_blank" rel="noopener noreferrer">
+            <SiLeetcode className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
+          </a>
+          <a href="https://www.hackerrank.com/profile/bannydommati" target="_blank" rel="noopener noreferrer">
+            <FaHackerrank className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
+          </a>
         </div>
       </div>
 
@@ -46,7 +49,7 @@ const Sidebar = ({ onTabClick }) => {
                 ? 'bg-gray-800 text-white' 
                 : 'text-gray-400 hover:text-white hover:bg-gray-800'
             }`}
-            onClick={() => handleTabClick('Home')}
+            onClick={() => onTabClick('Home')}
           >
             <AiOutlineHome size={20} /> <span className="text-lg">Home</span>
           </li>
@@ -56,7 +59,7 @@ const Sidebar = ({ onTabClick }) => {
                 ? 'bg-gray-800 text-white' 
                 : 'text-gray-400 hover:text-white hover:bg-gray-800'
             }`}
-            onClick={() => handleTabClick('About')}
+            onClick={() => onTabClick('About')}
           >
             <AiOutlineUser size={20} /> <span className="text-lg">About</span>
           </li>
@@ -66,7 +69,7 @@ const Sidebar = ({ onTabClick }) => {
                 ? 'bg-gray-800 text-white' 
                 : 'text-gray-400 hover:text-white hover:bg-gray-800'
             }`}
-            onClick={() => handleTabClick('Resume')}
+            onClick={() => onTabClick('Resume')}
           >
             <AiOutlineFileText size={20} /> <span className="text-lg">Resume</span>
           </li>
@@ -76,7 +79,7 @@ const Sidebar = ({ onTabClick }) => {
                 ? 'bg-gray-800 text-white' 
                 : 'text-gray-400 hover:text-white hover:bg-gray-800'
             }`}
-            onClick={() => handleTabClick('Portfolio')}
+            onClick={() => onTabClick('Portfolio')}
           >
             <AiOutlinePicture size={20} /> <span className="text-lg">Portfolio</span>
           </li>
@@ -86,7 +89,7 @@ const Sidebar = ({ onTabClick }) => {
                 ? 'bg-gray-800 text-white' 
                 : 'text-gray-400 hover:text-white hover:bg-gray-800'
             }`}
-            onClick={() => handleTabClick('Skills')}
+            onClick={() => onTabClick('Skills')}
           >
             <AiOutlineTool size={20} /> <span className="text-lg">Skills</span>
           </li>
@@ -96,7 +99,7 @@ const Sidebar = ({ onTabClick }) => {
                 ? 'bg-gray-800 text-white' 
                 : 'text-gray-400 hover:text-white hover:bg-gray-800'
             }`}
-            onClick={() => handleTabClick('Certifications')}
+            onClick={() => onTabClick('Certifications')}
           >
             <AiOutlineTrophy size={20} /> <span className="text-lg">Certifications</span>
           </li>
@@ -106,7 +109,7 @@ const Sidebar = ({ onTabClick }) => {
                 ? 'bg-gray-800 text-white' 
                 : 'text-gray-400 hover:text-white hover:bg-gray-800'
             }`}
-            onClick={() => handleTabClick('Contact')}
+            onClick={() => onTabClick('Contact')}
           >
             <AiOutlineMail size={20} /> <span className="text-lg">Contact</span>
           </li>
