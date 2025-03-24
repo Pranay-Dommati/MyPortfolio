@@ -22,7 +22,7 @@ const Sidebar = () => {
         />
         <h2 className="text-xl font-semibold mb-4">Alex Smith</h2>
         {/* Social Icons */}
-        <div className="flex space-x-4 mb-16">
+        <div className="flex space-x-4 mb-10">
           <FaFacebook className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
           <FaInstagram className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
           <FaSkype className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
