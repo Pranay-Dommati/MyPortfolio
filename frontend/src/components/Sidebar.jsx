@@ -80,10 +80,24 @@ const Sidebar = ({ onTabClick }) => {
           >
             <AiOutlinePicture size={20} /> <span className="text-lg">Portfolio</span>
           </li>
-          <li className="flex items-center space-x-3 cursor-pointer text-gray-400 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-gray-800">
+          <li 
+            className={`flex items-center space-x-3 cursor-pointer px-4 py-2 rounded-lg transition-colors ${
+              activeTab === 'Skills' 
+                ? 'bg-gray-800 text-white' 
+                : 'text-gray-400 hover:text-white hover:bg-gray-800'
+            }`}
+            onClick={() => handleTabClick('Skills')}
+          >
             <AiOutlineTool size={20} /> <span className="text-lg">Skills</span>
           </li>
-          <li className="flex items-center space-x-3 cursor-pointer text-gray-400 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-gray-800">
+          <li 
+            className={`flex items-center space-x-3 cursor-pointer px-4 py-2 rounded-lg transition-colors ${
+              activeTab === 'Certifications' 
+                ? 'bg-gray-800 text-white' 
+                : 'text-gray-400 hover:text-white hover:bg-gray-800'
+            }`}
+            onClick={() => handleTabClick('Certifications')}
+          >
             <AiOutlineTrophy size={20} /> <span className="text-lg">Certifications</span>
           </li>
           <li className="flex items-center space-x-3 cursor-pointer text-gray-400 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-gray-800">
