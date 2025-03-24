@@ -7,27 +7,68 @@ const AboutSection = () => {
         <p className="text-xl font-semibold mb-6 text-gray-700">👨‍💻 Full Stack Developer | AI Enthusiast</p>
         
         <p className="mb-8 text-gray-600 leading-relaxed">
-          I am a passionate Full Stack Developer with expertise in React, Django, and AI-based projects. 
-          I enjoy crafting scalable web applications and integrating artificial intelligence to enhance 
-          functionality and user experience.
+          I am a Computer Science student with a strong foundation in programming and software development. 
+          Through hands-on projects, I have built responsive web applications and solved complex algorithmic 
+          challenges. Passionate about emerging technologies like Python, AI, and scalable web development, 
+          I am committed to continuous learning and creating innovative solutions for impactful projects.
         </p>
         
         <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">🎓 Education</h3>
-          <p className="font-semibold text-gray-700">B.E. in Computer Science & Engineering – CBIT</p>
-          <p className="mt-2 text-gray-600">
-            Strong foundation in software development, system design, and emerging technologies.
-          </p>
+          <div className="space-y-4">
+            <div>
+              <p className="font-semibold text-gray-700">📌 Bachelor of Engineering (B.E), Computer Science & Engineering (2023 - 2027)</p>
+              <p className="text-gray-600">Chaitanya Bharathi Institute of Technology (Autonomous)</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-700">📌 Senior Secondary (XII), Telangana State Board of Intermediate Education (2023)</p>
+              <p className="text-gray-600">Narayana Junior College, Hyderabad, Ghatkesar</p>
+              <p className="text-gray-600">✅ Percentage: 97.90%</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-700">📌 Secondary (X), Telangana State Board (2021)</p>
+              <p className="text-gray-600">Sri Chaitanya High School, Korutla</p>
+              <p className="text-gray-600">✅ CGPA: 10/10</p>
+            </div>
+          </div>
         </div>
         
         <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">💡 Skills & Expertise</h3>
           <ul className="space-y-2 text-gray-600">
-            <li>✔ Frontend: React, Tailwind CSS, JavaScript, Vite</li>
-            <li>✔ Backend: Django, Python, REST APIs</li>
-            <li>✔ AI Integration: AI-powered solutions for enhanced automation</li>
+            <li>✔ Programming Languages: Python, C, JavaScript</li>
+            <li>✔ Frontend Development: HTML, CSS, ReactJS, Tailwind CSS</li>
+            <li>✔ Backend Development: Django, Flask, REST APIs</li>
+            <li>✔ Database Management: SQL, DBMS</li>
             <li>✔ Version Control: Git, GitHub</li>
-            <li>✔ Deployment & Hosting: DigitalOcean, Vercel</li>
+            <li>✔ Web Scraping & Automation: Selenium, BeautifulSoup</li>
+            <li>✔ Data Science & AI: Pandas, NumPy, Data Analysis</li>
+          </ul>
+        </div>
+        
+        <div className="mb-8">
+          <h3 className="text-2xl font-bold mb-4 text-gray-800">🏆 Certifications & Trainings</h3>
+          <ul className="space-y-3 text-gray-600">
+            <li>
+              <p className="font-semibold">✅ Salesforce AI Associate (Issued Mar 2025 – Salesforce)</p>
+              <p className="pl-5">Focused on Artificial Intelligence (AI) applications in Salesforce</p>
+            </li>
+            <li>
+              <p className="font-semibold">✅ Django (Dec 2024 - Jan 2025) – Udemy</p>
+              <p className="pl-5">Built scalable backend applications using Django & Python</p>
+            </li>
+            <li>
+              <p className="font-semibold">✅ Frontend Web Development (Oct 2024 - Jan 2025) – Coursera (Meta)</p>
+              <p className="pl-5">Learned HTML, CSS, JavaScript, React, Version Control, and UI/UX</p>
+            </li>
+            <li>
+              <p className="font-semibold">✅ Web Development (Sep 2024 - Oct 2024) – Internshala Trainings</p>
+              <p className="pl-5">Mastered HTML, CSS, Bootstrap, DBMS, and AI integrations in web development</p>
+            </li>
+            <li>
+              <p className="font-semibold">✅ Python (Dec 2023 - Mar 2024) – Udemy</p>
+              <p className="pl-5">Gained expertise in Python, Flask, API integration, and Web Scraping</p>
+            </li>
           </ul>
         </div>
         
