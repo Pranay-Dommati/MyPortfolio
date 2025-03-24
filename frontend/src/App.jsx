@@ -7,6 +7,7 @@ import ResumeSection from './components/ResumeSection'
 import PortfolioSection from './components/PortfolioSection'
 import SkillsSection from './components/SkillsSection'
 import CertificationsSection from './components/CertificationsSection'
+import ContactSection from './components/ContactSection'
 
 function App() {
   const homeRef = useRef(null);
@@ -15,6 +16,7 @@ function App() {
   const portfolioRef = useRef(null);
   const skillsRef = useRef(null);
   const certificationsRef = useRef(null);
+  const contactRef = useRef(null);
   
   const scrollToSection = (sectionName) => {
     if (sectionName === 'Home' && homeRef.current) {
@@ -29,8 +31,9 @@ function App() {
       skillsRef.current.scrollIntoView({ behavior: 'smooth' });
     } else if (sectionName === 'Certifications' && certificationsRef.current) {
       certificationsRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (sectionName === 'Contact' && contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-    // Add more conditions for other sections as you create them
   };
 
   return (
@@ -55,7 +58,9 @@ function App() {
         <section ref={certificationsRef} id="certifications">
           <CertificationsSection />
         </section>
-        {/* Add more sections as needed */}
+        <section ref={contactRef} id="contact">
+          <ContactSection />
+        </section>
       </div>
     </div>
   )

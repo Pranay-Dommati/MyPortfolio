@@ -100,7 +100,14 @@ const Sidebar = ({ onTabClick }) => {
           >
             <AiOutlineTrophy size={20} /> <span className="text-lg">Certifications</span>
           </li>
-          <li className="flex items-center space-x-3 cursor-pointer text-gray-400 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-gray-800">
+          <li 
+            className={`flex items-center space-x-3 cursor-pointer px-4 py-2 rounded-lg transition-colors ${
+              activeTab === 'Contact' 
+                ? 'bg-gray-800 text-white' 
+                : 'text-gray-400 hover:text-white hover:bg-gray-800'
+            }`}
+            onClick={() => handleTabClick('Contact')}
+          >
             <AiOutlineMail size={20} /> <span className="text-lg">Contact</span>
           </li>
         </ul>
@@ -110,4 +117,3 @@ const Sidebar = ({ onTabClick }) => {
 };
 
 export default Sidebar;
-
