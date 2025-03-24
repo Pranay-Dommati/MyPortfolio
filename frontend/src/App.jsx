@@ -19,6 +19,7 @@ function App() {
   const skillsRef = useRef(null);
   const certificationsRef = useRef(null);
   const contactRef = useRef(null);
+  const contentRef = useRef(null);
   
   const scrollToSection = (sectionName) => {
     setActiveTab(sectionName);
@@ -40,77 +41,88 @@ function App() {
     }
   };
 
-  // Set up intersection observers for each section
+  // Handle scroll events to determine which section is in view
   useEffect(() => {
     const sectionRefs = [
-      { ref: homeRef, id: 'Home' },
-      { ref: aboutRef, id: 'About' },
-      { ref: resumeRef, id: 'Resume' },
-      { ref: portfolioRef, id: 'Portfolio' },
-      { ref: skillsRef, id: 'Skills' },
-      { ref: certificationsRef, id: 'Certifications' },
-      { ref: contactRef, id: 'Contact' }
+      { ref: homeRef, name: 'Home' },
+      { ref: aboutRef, name: 'About' },
+      { ref: resumeRef, name: 'Resume' },
+      { ref: portfolioRef, name: 'Portfolio' },
+      { ref: skillsRef, name: 'Skills' },
+      { ref: certificationsRef, name: 'Certifications' },
+      { ref: contactRef, name: 'Contact' }
     ];
 
-    // Update the observer options with a lower threshold
-    const observerOptions = {
-      root: null, // viewport
-      rootMargin: '0px',
-      threshold: 0.2, // Changed from 0.6 to 0.2 - triggers when 20% of the section is visible
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Find which section this is and update the active tab
-          const sectionId = entry.target.id;
-          const sectionName = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
-          setActiveTab(sectionName);
+    // Function to calculate which section is most visible in the viewport
+    const handleScroll = () => {
+      if (!contentRef.current) return;
+      
+      const scrollPosition = contentRef.current.scrollTop + 300; // Adding offset to improve detection
+      
+      // Find all sections and their positions
+      const sectionPositions = sectionRefs
+        .filter(({ ref }) => ref.current)
+        .map(({ ref, name }) => ({
+          name,
+          position: ref.current.offsetTop,
+          height: ref.current.offsetHeight
+        }));
+      
+      // Determine which section is currently most visible
+      for (let i = 0; i < sectionPositions.length; i++) {
+        const current = sectionPositions[i];
+        const next = sectionPositions[i + 1];
+        
+        // If this is the last section or we're between this section and the next
+        if (
+          i === sectionPositions.length - 1 || 
+          (scrollPosition >= current.position && scrollPosition < next.position)
+        ) {
+          if (activeTab !== current.name) {
+            setActiveTab(current.name);
+          }
+          break;
         }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
-    sectionRefs.forEach(({ ref }) => {
-      if (ref.current) {
-        observer.observe(ref.current);
       }
-    });
-
-    // Cleanup observer on component unmount
-    return () => {
-      sectionRefs.forEach(({ ref }) => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      });
     };
-  }, []);
+    
+    const contentElement = contentRef.current;
+    if (contentElement) {
+      contentElement.addEventListener('scroll', handleScroll);
+      // Initial check
+      handleScroll();
+    }
+    
+    return () => {
+      if (contentElement) {
+        contentElement.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [activeTab]); // Depend on activeTab to prevent unnecessary re-calculations
 
   return (
     <div className="flex">
       <Sidebar activeTab={activeTab} onTabClick={scrollToSection} />
-      <div className="flex-1 h-screen overflow-y-auto">
-        <section ref={homeRef} id="home">
+      <div ref={contentRef} className="flex-1 h-screen overflow-y-auto">
+        <section ref={homeRef} id="home" className="min-h-screen">
           <HeroSection />
         </section>
-        <section ref={aboutRef} id="about">
+        <section ref={aboutRef} id="about" className="min-h-screen">
           <AboutSection />
         </section>
-        <section ref={resumeRef} id="resume">
+        <section ref={resumeRef} id="resume" className="min-h-screen">
           <ResumeSection />
         </section>
-        <section ref={portfolioRef} id="portfolio">
+        <section ref={portfolioRef} id="portfolio" className="min-h-screen">
           <PortfolioSection />
         </section>
-        <section ref={skillsRef} id="skills">
+        <section ref={skillsRef} id="skills" className="min-h-screen">
           <SkillsSection />
         </section>
-        <section ref={certificationsRef} id="certifications">
+        <section ref={certificationsRef} id="certifications" className="min-h-screen">
           <CertificationsSection />
         </section>
-        <section ref={contactRef} id="contact">
+        <section ref={contactRef} id="contact" className="min-h-screen">
           <ContactSection />
         </section>
       </div>
