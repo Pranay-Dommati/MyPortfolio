@@ -1,16 +1,50 @@
 import './App.css'
+import { useRef } from 'react'
 import HeroSection from './components/HeroSection'
 import Sidebar from './components/Sidebar'
+import AboutSection from './components/AboutSection'
+import ResumeSection from './components/ResumeSection'
+import PortfolioSection from './components/PortfolioSection'
+
 function App() {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const resumeRef = useRef(null);
+  const portfolioRef = useRef(null);
+  
+  const scrollToSection = (sectionName) => {
+    if (sectionName === 'Home' && homeRef.current) {
+      homeRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (sectionName === 'About' && aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (sectionName === 'Resume' && resumeRef.current) {
+      resumeRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (sectionName === 'Portfolio' && portfolioRef.current) {
+      portfolioRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Add more conditions for other sections as you create them
+  };
 
   return (
-    <>
-     <div className="flex">
-      <Sidebar />
-      <HeroSection />
+    <div className="flex">
+      <Sidebar onTabClick={scrollToSection} />
+      <div className="flex-1 h-screen overflow-y-auto">
+        <section ref={homeRef} id="home">
+          <HeroSection />
+        </section>
+        <section ref={aboutRef} id="about">
+          <AboutSection />
+        </section>
+        <section ref={resumeRef} id="resume">
+          <ResumeSection />
+        </section>
+        <section ref={portfolioRef} id="portfolio">
+          <PortfolioSection />
+        </section>
+        {/* Add more sections as needed */}
+      </div>
     </div>
-    </>
   )
 }
 
-export default App
+export default App;

@@ -1,4 +1,5 @@
-import { FaFacebook, FaInstagram, FaSkype, FaLinkedin, FaTimes } from "react-icons/fa";
+import { useState } from 'react';
+import { FaFacebook, FaInstagram, FaSkype, FaLinkedin } from "react-icons/fa";
 import { 
   AiOutlineHome, 
   AiOutlineUser, 
@@ -6,13 +7,19 @@ import {
   AiOutlinePicture, 
   AiOutlineTool,
   AiOutlineMail,
-  AiOutlineTrophy,
-  AiOutlineStar
+  AiOutlineTrophy
 } from "react-icons/ai";
 
-const Sidebar = () => {
+const Sidebar = ({ onTabClick }) => {
+  const [activeTab, setActiveTab] = useState('Home');
+
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+    onTabClick(tabName);
+  };
+
   return (
-    <div className="w-72 bg-gray-900 text-white h-screen p-6 flex flex-col">
+    <div className="w-72 bg-gray-900 text-white h-screen p-6 flex flex-col sticky top-0">
       {/* Profile Section */}
       <div className="flex flex-col items-center">
         <img
@@ -20,9 +27,9 @@ const Sidebar = () => {
           alt="Profile"
           className="rounded-full w-24 h-24 border-4 border-gray-700 mb-4"
         />
-        <h2 className="text-xl font-semibold mb-4">Alex Smith</h2>
+        <h2 className="text-xl font-semibold mb-4">Pranay Dommati</h2>
         {/* Social Icons */}
-        <div className="flex space-x-4 mb-10">
+        <div className="flex space-x-4 mb-16">
           <FaFacebook className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
           <FaInstagram className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
           <FaSkype className="text-gray-400 hover:text-white cursor-pointer text-xl transition-colors" />
@@ -33,16 +40,44 @@ const Sidebar = () => {
       {/* Navigation */}
       <nav className="flex-1">
         <ul className="space-y-6">
-          <li className="flex items-center space-x-3 cursor-pointer text-gray-400 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-gray-800">
+          <li 
+            className={`flex items-center space-x-3 cursor-pointer px-4 py-2 rounded-lg transition-colors ${
+              activeTab === 'Home' 
+                ? 'bg-gray-800 text-white' 
+                : 'text-gray-400 hover:text-white hover:bg-gray-800'
+            }`}
+            onClick={() => handleTabClick('Home')}
+          >
             <AiOutlineHome size={20} /> <span className="text-lg">Home</span>
           </li>
-          <li className="flex items-center space-x-3 cursor-pointer text-gray-400 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-gray-800">
+          <li 
+            className={`flex items-center space-x-3 cursor-pointer px-4 py-2 rounded-lg transition-colors ${
+              activeTab === 'About' 
+                ? 'bg-gray-800 text-white' 
+                : 'text-gray-400 hover:text-white hover:bg-gray-800'
+            }`}
+            onClick={() => handleTabClick('About')}
+          >
             <AiOutlineUser size={20} /> <span className="text-lg">About</span>
           </li>
-          <li className="flex items-center space-x-3 cursor-pointer text-gray-400 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-gray-800">
+          <li 
+            className={`flex items-center space-x-3 cursor-pointer px-4 py-2 rounded-lg transition-colors ${
+              activeTab === 'Resume' 
+                ? 'bg-gray-800 text-white' 
+                : 'text-gray-400 hover:text-white hover:bg-gray-800'
+            }`}
+            onClick={() => handleTabClick('Resume')}
+          >
             <AiOutlineFileText size={20} /> <span className="text-lg">Resume</span>
           </li>
-          <li className="flex items-center space-x-3 cursor-pointer text-gray-400 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-gray-800">
+          <li 
+            className={`flex items-center space-x-3 cursor-pointer px-4 py-2 rounded-lg transition-colors ${
+              activeTab === 'Portfolio' 
+                ? 'bg-gray-800 text-white' 
+                : 'text-gray-400 hover:text-white hover:bg-gray-800'
+            }`}
+            onClick={() => handleTabClick('Portfolio')}
+          >
             <AiOutlinePicture size={20} /> <span className="text-lg">Portfolio</span>
           </li>
           <li className="flex items-center space-x-3 cursor-pointer text-gray-400 hover:text-white transition-colors px-4 py-2 rounded-lg hover:bg-gray-800">
