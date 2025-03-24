@@ -47,32 +47,6 @@ const AboutSection = () => {
         </div>
         
         <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-4 text-gray-800">🏆 Certifications & Trainings</h3>
-          <ul className="space-y-3 text-gray-600">
-            <li>
-              <p className="font-semibold">✅ Salesforce AI Associate (Issued Mar 2025 – Salesforce)</p>
-              <p className="pl-5">Focused on Artificial Intelligence (AI) applications in Salesforce</p>
-            </li>
-            <li>
-              <p className="font-semibold">✅ Django (Dec 2024 - Jan 2025) – Udemy</p>
-              <p className="pl-5">Built scalable backend applications using Django & Python</p>
-            </li>
-            <li>
-              <p className="font-semibold">✅ Frontend Web Development (Oct 2024 - Jan 2025) – Coursera (Meta)</p>
-              <p className="pl-5">Learned HTML, CSS, JavaScript, React, Version Control, and UI/UX</p>
-            </li>
-            <li>
-              <p className="font-semibold">✅ Web Development (Sep 2024 - Oct 2024) – Internshala Trainings</p>
-              <p className="pl-5">Mastered HTML, CSS, Bootstrap, DBMS, and AI integrations in web development</p>
-            </li>
-            <li>
-              <p className="font-semibold">✅ Python (Dec 2023 - Mar 2024) – Udemy</p>
-              <p className="pl-5">Gained expertise in Python, Flask, API integration, and Web Scraping</p>
-            </li>
-          </ul>
-        </div>
-        
-        <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">🚀 What Drives Me?</h3>
           <ul className="space-y-2 text-gray-600">
             <li>Building modern, responsive, and interactive web applications</li>
