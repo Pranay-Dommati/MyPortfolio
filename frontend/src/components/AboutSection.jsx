@@ -1,6 +1,6 @@
 const AboutSection = () => {
   return (
-    <div className="min-h-screen py-20 px-10" style={{ backgroundColor: "#f5f5f5" }}>
+    <div className="py-20 px-10" style={{ backgroundColor: "#f5f5f5" }}>
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold mb-8 text-gray-800">About Me</h2>
         
@@ -12,32 +12,29 @@ const AboutSection = () => {
           challenges. Passionate about emerging technologies like Python, AI, and scalable web development, 
           I am committed to continuous learning and creating innovative solutions for impactful projects.
         </p>
+      
         
-        {/* Education section remains commented out */}
-        
-        {/* <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-4 text-gray-800">💡 Skills & Expertise</h3>
-          <ul className="space-y-2 text-gray-600">
-            <li>✔ Programming Languages: Python, C, JavaScript</li>
-            <li>✔ Frontend Development: HTML, CSS, ReactJS, Tailwind CSS</li>
-            <li>✔ Backend Development: Django, Flask, REST APIs</li>
-            <li>✔ Database Management: SQL, DBMS</li>
-            <li>✔ Version Control: Git, GitHub</li>
-            <li>✔ Web Scraping & Automation: Selenium, BeautifulSoup</li>
-            <li>✔ Data Science & AI: Pandas, NumPy, Data Analysis</li>
-          </ul>
-        </div> */}
-        
+        {/* What Drives Me section */}
         <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">🚀 What Drives Me?</h3>
           <ul className="space-y-2 text-gray-600">
-            <li>Building modern, responsive, and interactive web applications</li>
-            <li>Exploring AI applications in web development</li>
-            <li>Learning and adapting to new technologies</li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✦</span>
+              Building modern, responsive, and interactive web applications
+            </li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✦</span>
+              Exploring AI applications in web development
+            </li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✦</span>
+              Learning and adapting to new technologies
+            </li>
           </ul>
         </div>
         
-        <div>
+        {/* Let's Connect section */}
+        <div className="mb-12">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">📩 Let's Connect!</h3>
           <p className="text-gray-600">
             If you're looking for a developer who's passionate about innovation and problem-solving, 
