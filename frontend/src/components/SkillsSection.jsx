@@ -1,7 +1,7 @@
-import { AiFillCode, AiOutlineHtml5, AiFillDatabase, AiFillGithub, AiOutlineBarChart } from "react-icons/ai";
-import { FaPython, FaReact, FaCss3Alt, FaJs, FaGithub, FaCode } from "react-icons/fa";
-import { SiDjango, SiFlask, SiSelenium, SiNumpy, SiPandas, SiTailwindcss, SiMysql } from "react-icons/si";
-import { TbApi, TbSoup } from "react-icons/tb";
+import { AiFillCode, AiOutlineHtml5, AiFillDatabase, AiFillGithub, AiOutlineBarChart, AiOutlineLineChart } from "react-icons/ai";
+import { FaPython, FaReact, FaCss3Alt, FaJs, FaGithub, FaChartBar, FaChartLine, FaBrain, FaBootstrap } from "react-icons/fa";
+import { SiDjango, SiFlask, SiSelenium, SiNumpy, SiPandas, SiTailwindcss, SiMysql, SiScikitlearn } from "react-icons/si";
+import { TbApi, TbSoup, TbChartBar } from "react-icons/tb";
 import { BiData } from "react-icons/bi";
 
 const SkillsSection = () => {
@@ -23,7 +23,8 @@ const SkillsSection = () => {
         { name: "HTML", icon: <AiOutlineHtml5 className="text-orange-600" /> },
         { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
         { name: "ReactJS", icon: <FaReact className="text-blue-400" /> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-500" /> }
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-500" /> },
+        { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> }
       ],
       bgColor: "#FDF2F8" // Light pink background
     },
@@ -70,6 +71,9 @@ const SkillsSection = () => {
       skills: [
         { name: "Pandas", icon: <SiPandas className="text-blue-700" /> },
         { name: "NumPy", icon: <SiNumpy className="text-blue-500" /> },
+        { name: "Matplotlib", icon: <AiOutlineLineChart className="text-orange-500" /> },
+        { name: "Seaborn", icon: <TbChartBar className="text-blue-400" /> },
+        { name: "scikit-learn", icon: <SiScikitlearn className="text-orange-600" /> },
         { name: "Data Analysis", icon: <BiData className="text-purple-500" /> }
       ],
       bgColor: "#FEF2F2" // Light red background

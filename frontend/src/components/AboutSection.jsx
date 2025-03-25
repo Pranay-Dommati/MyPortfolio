@@ -13,27 +13,9 @@ const AboutSection = () => {
           I am committed to continuous learning and creating innovative solutions for impactful projects.
         </p>
         
-        {/* <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-4 text-gray-800">🎓 Education</h3>
-          <div className="space-y-4">
-            <div>
-              <p className="font-semibold text-gray-700">📌 Bachelor of Engineering (B.E), Computer Science & Engineering (2023 - 2027)</p>
-              <p className="text-gray-600">Chaitanya Bharathi Institute of Technology (Autonomous)</p>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-700">📌 Senior Secondary (XII), Telangana State Board of Intermediate Education (2023)</p>
-              <p className="text-gray-600">Narayana Junior College, Hyderabad, Ghatkesar</p>
-              <p className="text-gray-600">✅ Percentage: 97.90%</p>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-700">📌 Secondary (X), Telangana State Board (2021)</p>
-              <p className="text-gray-600">Sri Chaitanya High School, Korutla</p>
-              <p className="text-gray-600">✅ CGPA: 10/10</p>
-            </div>
-          </div>
-        </div> */}
+        {/* Education section remains commented out */}
         
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">💡 Skills & Expertise</h3>
           <ul className="space-y-2 text-gray-600">
             <li>✔ Programming Languages: Python, C, JavaScript</li>
@@ -44,7 +26,7 @@ const AboutSection = () => {
             <li>✔ Web Scraping & Automation: Selenium, BeautifulSoup</li>
             <li>✔ Data Science & AI: Pandas, NumPy, Data Analysis</li>
           </ul>
-        </div>
+        </div> */}
         
         <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">🚀 What Drives Me?</h3>
@@ -59,7 +41,16 @@ const AboutSection = () => {
           <h3 className="text-2xl font-bold mb-4 text-gray-800">📩 Let's Connect!</h3>
           <p className="text-gray-600">
             If you're looking for a developer who's passionate about innovation and problem-solving, 
-            feel free to reach out!
+            <a 
+              href="#contact" 
+              className="text-blue-600 hover:text-blue-800 transition-colors mx-1 font-medium"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              feel free to reach out!
+            </a>
           </p>
         </div>
       </div>
