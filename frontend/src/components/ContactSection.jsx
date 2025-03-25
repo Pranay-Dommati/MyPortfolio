@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -80,7 +80,7 @@ const ContactSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Contact Info */}
-          <div className="lg:col-span-1 space-y-8">
+          <div className="lg:col-span-1">
             <div className="bg-white p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-6 text-gray-800">Contact Information</h3>
               
@@ -91,20 +91,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-gray-700 font-medium">Email</h4>
-                    <a href="mailto:contact@yourname.com" className="text-blue-600 hover:underline">
-                      contact@yourname.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-green-100 p-3 rounded-full mr-4">
-                    <FaPhoneAlt className="text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-gray-700 font-medium">Phone</h4>
-                    <a href="tel:+1234567890" className="text-blue-600 hover:underline">
-                      +1 (234) 567-890
+                    <a href="mailto:bannydommati@gmail.com" className="text-blue-600 hover:underline">
+                      bannydommati@gmail.com
                     </a>
                   </div>
                 </div>
@@ -121,20 +109,6 @@ const ContactSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Map Placeholder (can be replaced with actual map) */}
-            <div className="bg-gray-200 h-64 rounded-lg overflow-hidden shadow-md">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.3568878612!2d78.24323106316412!3d17.412281559480186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1689859112780!5m2!1sen!2sin" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen="" 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Hyderabad Map"
-              ></iframe>
             </div>
           </div>
           
@@ -165,7 +139,7 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-md border ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                   />
                   {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                 </div>
@@ -179,7 +153,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-md border ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                    placeholder="john@example.com"
+                    placeholder="example@gmail.com"
                   />
                   {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>

@@ -1,6 +1,8 @@
 import { AiFillCode, AiOutlineHtml5, AiFillDatabase, AiFillGithub, AiOutlineBarChart } from "react-icons/ai";
-import { FaPython, FaReact, FaCss3Alt, FaJs } from "react-icons/fa";
-import { SiDjango, SiFlask, SiSelenium, SiNumpy, SiPandas } from "react-icons/si";
+import { FaPython, FaReact, FaCss3Alt, FaJs, FaGithub, FaCode } from "react-icons/fa";
+import { SiDjango, SiFlask, SiSelenium, SiNumpy, SiPandas, SiTailwindcss, SiMysql } from "react-icons/si";
+import { TbApi, TbSoup } from "react-icons/tb";
+import { BiData } from "react-icons/bi";
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -15,41 +17,60 @@ const SkillsSection = () => {
       bgColor: "#EFF6FF" // Light blue background
     },
     {
-      title: "Web Development",
+      title: "Frontend Development",
       icon: <AiOutlineHtml5 className="text-3xl text-orange-500" />,
       skills: [
         { name: "HTML", icon: <AiOutlineHtml5 className="text-orange-600" /> },
         { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
         { name: "ReactJS", icon: <FaReact className="text-blue-400" /> },
-        { name: "Django", icon: <SiDjango className="text-green-700" /> },
-        { name: "Flask", icon: <SiFlask className="text-gray-700" /> }
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-500" /> }
       ],
       bgColor: "#FDF2F8" // Light pink background
     },
     {
-      title: "Databases",
+      title: "Backend Development",
+      icon: <SiDjango className="text-3xl text-green-700" />,
+      skills: [
+        { name: "Django", icon: <SiDjango className="text-green-700" /> },
+        { name: "Flask", icon: <SiFlask className="text-gray-700" /> },
+        { name: "REST APIs", icon: <TbApi className="text-indigo-600" /> }
+      ],
+      bgColor: "#F0FDF4" // Light green background
+    },
+    {
+      title: "Database Management",
       icon: <AiFillDatabase className="text-3xl text-purple-600" />,
       skills: [
-        { name: "Database Management System (DBMS)", icon: <AiFillDatabase className="text-purple-600" /> }
+        { name: "SQL", icon: <SiMysql className="text-blue-800" /> },
+        { name: "DBMS", icon: <AiFillDatabase className="text-purple-600" /> }
       ],
       bgColor: "#F3F4F6" // Light gray background
     },
     {
-      title: "Version Control & Tools",
+      title: "Version Control",
       icon: <AiFillGithub className="text-3xl text-gray-800" />,
       skills: [
         { name: "Git", icon: <AiFillGithub className="text-gray-800" /> },
-        { name: "REST API", icon: <span className="text-green-600 font-mono">API</span> },
-        { name: "Selenium", icon: <SiSelenium className="text-green-500" /> }
+        { name: "GitHub", icon: <FaGithub className="text-gray-800" /> }
       ],
-      bgColor: "#ECFDF5" // Light green background
+      bgColor: "#E0F2FE" // Light blue background
     },
     {
-      title: "Data Analysis & Libraries",
+      title: "Web Scraping & Automation",
+      icon: <SiSelenium className="text-3xl text-green-500" />,
+      skills: [
+        { name: "Selenium", icon: <SiSelenium className="text-green-500" /> },
+        { name: "BeautifulSoup", icon: <TbSoup className="text-blue-500" /> }
+      ],
+      bgColor: "#F0FDFA" // Light teal background
+    },
+    {
+      title: "Data Science & AI",
       icon: <AiOutlineBarChart className="text-3xl text-red-600" />,
       skills: [
         { name: "Pandas", icon: <SiPandas className="text-blue-700" /> },
-        { name: "NumPy", icon: <SiNumpy className="text-blue-500" /> }
+        { name: "NumPy", icon: <SiNumpy className="text-blue-500" /> },
+        { name: "Data Analysis", icon: <BiData className="text-purple-500" /> }
       ],
       bgColor: "#FEF2F2" // Light red background
     }

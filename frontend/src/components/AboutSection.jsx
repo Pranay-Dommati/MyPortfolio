@@ -13,7 +13,7 @@ const AboutSection = () => {
           I am committed to continuous learning and creating innovative solutions for impactful projects.
         </p>
         
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">🎓 Education</h3>
           <div className="space-y-4">
             <div>
@@ -31,7 +31,7 @@ const AboutSection = () => {
               <p className="text-gray-600">✅ CGPA: 10/10</p>
             </div>
           </div>
-        </div>
+        </div> */}
         
         <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">💡 Skills & Expertise</h3>
