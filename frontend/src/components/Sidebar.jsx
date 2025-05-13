@@ -14,7 +14,7 @@ import profileImage from '../assets/profile.jpg'; // Import the profile image
 
 const Sidebar = ({ activeTab, onTabClick }) => {
   return (
-    <div className="w-72 bg-gray-900 text-white h-screen p-6 flex flex-col sticky top-0">
+    <div className="w-72 bg-gray-900 text-white min-h-screen h-full p-6 flex flex-col sticky top-0">
       {/* Profile Section */}
       <div className="flex flex-col items-center">
         <img

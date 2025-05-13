@@ -141,7 +141,7 @@ function App() {
       {/* Sidebar - hidden on mobile unless menu is open */}
       <div className={`${
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-      } md:translate-x-0 transition-transform duration-300 fixed md:sticky top-0 left-0 z-50 md:z-0 h-screen w-72 md:flex bg-gray-900`}>
+      } md:translate-x-0 transition-transform duration-300 fixed md:sticky top-0 left-0 z-50 md:z-0 min-h-screen h-full w-72 md:flex bg-gray-900`}>
         <Sidebar activeTab={activeTab} onTabClick={scrollToSection} />
       </div>
         {/* Main content - add top padding on mobile for the header */}
