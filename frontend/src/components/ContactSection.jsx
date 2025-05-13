@@ -83,9 +83,8 @@ const ContactSection = () => {
       setTimeout(() => setSubmitStatus(null), 5000);
     }
   };
-
   return (
-    <div className="min-h-screen py-20 px-10" style={{ backgroundColor: "#F4FAFD" }}>
+    <div className="min-h-screen py-20 px-10 flex-grow" style={{ backgroundColor: "#F4FAFD" }}>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold mb-4 text-gray-800">Get In Touch</h2>
         <p className="text-gray-600 mb-12 max-w-2xl">

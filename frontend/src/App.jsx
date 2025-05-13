@@ -144,9 +144,8 @@ function App() {
       } md:translate-x-0 transition-transform duration-300 fixed md:sticky top-0 left-0 z-50 md:z-0 h-screen w-72 md:flex bg-gray-900`}>
         <Sidebar activeTab={activeTab} onTabClick={scrollToSection} />
       </div>
-      
-      {/* Main content - add top padding on mobile for the header */}
-      <div ref={contentRef} className="flex-1 h-screen overflow-y-auto md:overflow-y-auto pt-14 md:pt-0">
+        {/* Main content - add top padding on mobile for the header */}
+      <div ref={contentRef} className="flex-1 h-screen overflow-y-auto md:overflow-y-auto pt-14 md:pt-0 flex flex-col" style={{ backgroundColor: "#F4FAFD" }}>
         <section ref={homeRef} id="home" className="min-h-screen">
           <HeroSection />
         </section>
@@ -165,7 +164,7 @@ function App() {
         <section ref={certificationsRef} id="certifications">
           <CertificationsSection />
         </section>
-        <section ref={contactRef} id="contact">
+        <section ref={contactRef} id="contact" className="flex-grow">
           <ContactSection />
         </section>
       </div>
