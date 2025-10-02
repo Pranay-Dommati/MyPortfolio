@@ -16,7 +16,7 @@ const HeroSection = () => {
         <h1 className="text-5xl font-bold text-white mb-4">Pranay Dommati</h1>
         <p className="text-2xl text-gray-300 mb-6">I'm a Full Stack Web Developer</p>
         <a 
-          href="https://drive.google.com/file/d/195b6cnedwAzDOzkjFwWkCste8fvD6K8V/view?usp=sharing" 
+          href="https://drive.google.com/file/d/1kRCUyOiEzYfbnnHTE3vC6995urzUmOLT/view?usp=sharing" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition duration-300 inline-block"

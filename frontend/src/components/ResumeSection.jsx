@@ -71,7 +71,7 @@ const ResumeSection = () => {
         
         <div className="flex justify-center">
           <a
-            href="https://drive.google.com/file/d/195b6cnedwAzDOzkjFwWkCste8fvD6K8V/view?usp=sharing"
+            href="https://drive.google.com/file/d/1kRCUyOiEzYfbnnHTE3vC6995urzUmOLT/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition duration-300 flex items-center"
